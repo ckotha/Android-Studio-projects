@@ -1,8 +1,10 @@
 package com.charan.memorableplaces;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,11 +19,15 @@ import com.google.android.gms.maps.model.LatLng;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 public class MainActivity extends AppCompatActivity {
 
     static ArrayList<String> places = new ArrayList<>();
     static ArrayList<LatLng> locations = new ArrayList<>();
+    ArrayList<String> latitudes;
+    ArrayList<String> longitudes;
     static ArrayAdapter arrayAdapter;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         ListView table = findViewById(R.id.table);
 
-        SharedPreferences sharedPreferences = this.getSharedPreferences("com.charan.memorableplaces", Context.MODE_PRIVATE);
+        sharedPreferences = this.getSharedPreferences("com.charan.memorableplaces", Context.MODE_PRIVATE);
 
-        ArrayList<String> latitudes = new ArrayList<>();
-        ArrayList<String> longitudes = new ArrayList<>();
+        latitudes = new ArrayList<>();
+        longitudes = new ArrayList<>();
 
         places.clear();
         latitudes.clear();
