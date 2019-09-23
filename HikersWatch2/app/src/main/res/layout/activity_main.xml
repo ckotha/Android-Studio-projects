@@ -40,7 +40,6 @@
         android:layout_height="240dp"
         android:gravity="center"
         android:lineSpacingExtra="8sp"
-        android:text="TextView"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FF5722"

@@ -92,31 +92,49 @@ public class MainActivity extends AppCompatActivity {
 
                     if(jsonPart.getString("main") != "" && jsonPart.getString("description") != "") {
 
-                        weather += jsonPart.getString("main") + ": " + jsonPart.getString("description") + "\r\n";
+                        weather += "Overall Weather: " + jsonPart.getString("description") + "\r\n";
 
                     }
 
                 }
 
-                if (weather != "") {
+                String weather2 = "";
 
-                    weatherText.setText(weather);
+                String main = jsonObject.getString("main");
+
+                Log.i("temp", jsonObject.getJSONObject("main").getString("temp"));
+
+
+                    if(jsonObject.getJSONObject("main").getString("temp") != "" && jsonObject.getJSONObject("main").getString("pressure") != "" && jsonObject.getJSONObject("main").getString("humidity") != "") {
+
+                        int farenheit = (int)((1.8 * (Double.parseDouble(jsonObject.getJSONObject("main").getString("temp")) - 273)) + 32);
+
+                        weather2 += "Temperature: " + Integer.toString(farenheit) + " F°" + "\n" + "Pressure: " + jsonObject.getJSONObject("main").getString("pressure") + " mbar" + "\n" + "Humidity: " + jsonObject.getJSONObject("main").getString("humidity") +"%" +"\r\n";
+
+                    }
+
+
+                if (weather != "" && weather2 != "") {
+
+                    weatherText.setText(weather + weather2);
                     Log.i("Weather", weather);
 
                 }else{
 
-                    Toast.makeText(getApplicationContext(), "Could not find weather", Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(), "Could not find weather", Toast.LENGTH_LONG).show();
+                    weatherText.setText("");
 
                 }
             } catch (JSONException e) {
 
-                Toast.makeText(getApplicationContext(), "Could not find weather", Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Could not find weather", Toast.LENGTH_LONG).show();
+                weatherText.setText("");
                 e.printStackTrace();
 
             }
             catch (Exception e) {
-
-                Toast.makeText(getApplicationContext(), "Could not find weather", Toast.LENGTH_LONG);
+                weatherText.setText("");
+                Toast.makeText(getApplicationContext(), "Could not find weather", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
 
             }
@@ -141,8 +159,8 @@ public class MainActivity extends AppCompatActivity {
         } catch (UnsupportedEncodingException e) {
 
             e.printStackTrace();
-
-            Toast.makeText(getApplicationContext(), "Could not find weather", Toast.LENGTH_LONG);
+            weatherText.setText("");
+            Toast.makeText(getApplicationContext(), "Could not find weather", Toast.LENGTH_LONG).show();
 
         }
 

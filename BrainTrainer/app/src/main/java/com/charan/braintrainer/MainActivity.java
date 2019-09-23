@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     TextView correctText;
     TextView questionText;
     TextView answerText;
+    TextView t1;
+    TextView t2;
+    TextView t3;
     Button op1Button;
     Button op2Button;
     Button op3Button;
@@ -116,6 +119,9 @@ public class MainActivity extends AppCompatActivity {
             timerText.setVisibility(View.GONE);
             correctText.setVisibility(View.GONE);
             questionText.setVisibility(View.GONE);
+            t1.setVisibility(View.GONE);
+            t2.setVisibility(View.GONE);
+            t3.setVisibility(View.GONE);
             answerText.setVisibility(View.GONE);
             op1Button.setVisibility(View.GONE);
             op2Button.setVisibility(View.GONE);
@@ -129,6 +135,9 @@ public class MainActivity extends AppCompatActivity {
             correctText.setVisibility(View.VISIBLE);
             questionText.setVisibility(View.VISIBLE);
             answerText.setVisibility(View.VISIBLE);
+            t1.setVisibility(View.VISIBLE);
+            t2.setVisibility(View.VISIBLE);
+            t3.setVisibility(View.VISIBLE);
             op1Button.setVisibility(View.VISIBLE);
             op2Button.setVisibility(View.VISIBLE);
             op3Button.setVisibility(View.VISIBLE);
@@ -145,6 +154,10 @@ public class MainActivity extends AppCompatActivity {
         correctText = findViewById(R.id.correctText);
         questionText = findViewById(R.id.questionText);
         answerText = findViewById(R.id.answerText);
+        t1 = findViewById(R.id.t1);
+        t2 = findViewById(R.id.t2);
+        t3 = findViewById(R.id.t3);
+
 
         op1Button = findViewById(R.id.op1Button);
         op1Button.setTag(0);
