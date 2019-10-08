@@ -19,6 +19,8 @@ import android.util.Log;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Locale;
 
@@ -61,10 +63,26 @@ public class MainActivity extends AppCompatActivity {
 
             if(addressList.get(0) != null) {
 
-                info = "Latitude: " + addressList.get(0).getLatitude() + "\n"
-                        + "Longitude: " +  addressList.get(0).getLongitude() + "\n"
-                        + "Accuracy: " +  location.getAccuracy() + "\n"
-                        + "Altitude: " +  location.getAltitude() + "\n"
+                DecimalFormat df = new DecimalFormat("#.######");
+                df.setRoundingMode(RoundingMode.CEILING);
+                String lat = "";
+                String lng = "";
+                if(addressList.get(0).getLatitude() >= 0 ){
+                    lat = " °N";
+                }else{
+                    lat = " °S";
+                }
+
+                if(addressList.get(0).getLongitude() >= 0){
+                    lng = " °E";
+                }else{
+                    lng = " °W";
+                }
+
+                info = "Latitude: " + df.format(addressList.get(0).getLatitude()) + lat + "\n"
+                        + "Longitude: " +  df.format(addressList.get(0).getLongitude()) + lng + "\n"
+                        + "Accuracy: " +  df.format(location.getAccuracy()) + "m" + "\n"
+                        + "Altitude: " +  df.format(location.getAltitude()) + "m" + "\n"
                         + "Address: " + addressList.get(0).getAddressLine(0);
             }
 

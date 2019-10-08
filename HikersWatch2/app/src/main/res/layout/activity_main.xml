@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
     <TextView
         android:id="@+id/locationInfo"
         android:layout_width="349dp"
-        android:layout_height="240dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:lineSpacingExtra="8sp"
         android:textAlignment="center"
