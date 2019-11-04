@@ -38,7 +38,6 @@ import java.util.List;
 public class UserListActivity extends AppCompatActivity {
 
     private static final String TAG = "UserListActivity";
-
     public ArrayList<String> names = new ArrayList<String>();
 
     public void getPhoto() {

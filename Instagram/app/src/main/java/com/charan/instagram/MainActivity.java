@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
         logIn = false;
         signUpButton.setText("Sign Up");
         loginButton.setText(("Or Log In"));
-
         passwordText.setOnKeyListener(this);
 
         if(ParseUser.getCurrentUser() != null){
