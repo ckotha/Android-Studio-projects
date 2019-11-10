@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ListView
-        android:id="@+id/myListView"
-        android:layout_width="389dp"
-        android:layout_height="583dp"
+    <VideoView
+        android:id="@+id/videoView1"
+        android:layout_width="369dp"
+        android:layout_height="373dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"

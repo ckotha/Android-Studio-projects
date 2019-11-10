@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">testingApp</string>
+    <string name="Undo">UNDO</string>
+    <string name="snackbar">I\'m a snackbar</string>
+    <string name="notify_me">Notify Me!</string>
+    <string name="update_me">Update Me!</string>
+    <string name="cancel_me">Cancel Me!</string>
+    <string name="Job_Service_notification">Job Service notification</string>
+    <string name="Notifications_from_Job_Service">Notifications from Job Service</string>
+    <string name="Job_Service">Job Service</string>
+    <string name="team_1">Team 1</string>
+    <string name="minus_button">Minus Button</string>
+    <string name="plus_button">Plus Button</string>
+    <string name="team_2">Team 2</string>
+    <string name="_0">0</string>
+    <string name="night_mode">Night Mode</string>
+    <string name="day_mode">Day Mode</string>
+    <string name="title_activity_recycler">RecyclerActivity</string>
+</resources>

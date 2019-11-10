@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">testingApp</string>
+    <string name="snackbar">"je suis un snack "</string>
+    <string name="Undo">ANNULER</string>
+</resources>
